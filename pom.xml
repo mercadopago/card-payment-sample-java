@@ -8,9 +8,9 @@
         <version>2.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.mercadolibre</groupId>
+    <groupId>com.mercadopago.sample</groupId>
     <artifactId>card-payment-sample-java</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <name>card-payment-sample-java</name>
     <description>Card payment sample written in Java</description>
     <properties>
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.mercadopago</groupId>
             <artifactId>sdk-java</artifactId>
-            <version>1.10.2</version>
+            <version>1.11.0</version>
         </dependency>
     </dependencies>
 
