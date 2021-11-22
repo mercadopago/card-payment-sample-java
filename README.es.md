@@ -8,7 +8,6 @@
 
 ## 💡 Requisitos
 - Java 8 o superior (sigue las instrucciones de descarga [aquí](https://java.com/es/download/help/download_options.html)).
-- [Maven](https://maven.apache.org/) (dependency manager).
 - [Lee nuestras instrucciones](https://www.mercadopago.com/developers/es/guides/overview#bookmark_el_desarrollo_con_c%C3%B3digo) sobre cómo crear una aplicación en el Panel de Desarrolladores de Mercado Pago para obtener la public key y el access token. Estas llaves te darán acceso a las API de Mercado Pago.
 
 ## :gear: Instalación
@@ -22,10 +21,29 @@ git clone https://github.com/mercadopago/card-payment-sample-java.git
 cd card-payment-sample-java
 ```
 
+3. Ejecuta el siguiente comando:
+
+Linux / MacOS
+```bash
+./mvnw clean install
+```
+
+Windows
+```bash
+./mvnw.cmd clean install
+```
+
 ## 🌟 Como ejecutar
 1. Ejecuta el siguiente comando para iniciar la aplicación:
+
+Linux / MacOS
 ```bash
-mvn spring-boot:run -Dspring-boot.run.arguments="--mercado_pago_sample_public_key=YOUR_PUBLIC_KEY --mercado_pago_sample_access_token=YOUR_ACCESS_TOKEN"
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--mercado_pago_sample_public_key=YOUR_PUBLIC_KEY --mercado_pago_sample_access_token=YOUR_ACCESS_TOKEN"
+``` 
+
+Windows
+```bash
+./mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--mercado_pago_sample_public_key=YOUR_PUBLIC_KEY --mercado_pago_sample_access_token=YOUR_ACCESS_TOKEN"
 ``` 
 
 2. Recuerda cambiar los valores de `YOUR_PUBLIC_KEY` y `YOUR_ACCESS_TOKEN` por las [credenciales](https://www.mercadopago.com/developers/panel) de su cuenta.
