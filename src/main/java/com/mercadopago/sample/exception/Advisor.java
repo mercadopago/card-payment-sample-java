@@ -33,8 +33,8 @@ public class Advisor extends ResponseEntityExceptionHandler {
     @ExceptionHandler(MercadoPagoException.class)
     public ResponseEntity<Object> handleMercadoPagoException(MercadoPagoException exception) {
         Map<String, String> body = new HashMap<>();
-        body.put("message", exception.getMessage());
+        body.put("error_message", exception.getMessage());
 
-        return new ResponseEntity<>(body, HttpStatus.UNPROCESSABLE_ENTITY);
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 }
