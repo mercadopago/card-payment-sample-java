@@ -39,6 +39,8 @@ public class CardPaymentService {
 
             Payment createdPayment = payment.save();
 
+            this.validatePaymentResult(createdPayment);
+
             PaymentResponseDTO paymentResponseDTO = new PaymentResponseDTO(
                     createdPayment.getId(),
                     String.valueOf(createdPayment.getStatus()),
@@ -47,7 +49,21 @@ public class CardPaymentService {
 
             return paymentResponseDTO;
         } catch (MPException exception) {
+            System.out.println(exception.getMessage());
             throw new MercadoPagoException(exception.getMessage());
+        }
+    }
+
+    private void validatePaymentResult(Payment createdPayment) throws MPException {
+        if(createdPayment.getId() == null) {
+            String errorMessage = "Unknown error cause";
+
+            if(createdPayment.getLastApiResponse() != null) {
+                String sdkErrorMessage = createdPayment.getLastApiResponse().getJsonElementResponse().getAsJsonObject().get("message").getAsString();
+                errorMessage = sdkErrorMessage != null ? sdkErrorMessage : errorMessage;
+            }
+
+            throw new MPException(errorMessage);
         }
     }
 }
