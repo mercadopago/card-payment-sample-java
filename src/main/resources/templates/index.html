@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://beta-sdk.mercadopago.com/js/v2"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script type="text/javascript" th:src="@{/js/index.js}" defer></script>
 </head>
 <body>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="form-group col-sm-4">
                                 <div class="input-group expiration-date">
-                                    <div id="form-checkout__cardExpirationDate" class="form-control h-40"></div>
+                                    <div id="form-checkout__expirationDate" class="form-control h-40"></div>
                                 </div>
                             </div>
                             <div class="form-group col-sm-8">
@@ -120,6 +120,8 @@
                             <div class="form-group col-sm-12">
                                 <input type="hidden" id="amount" />
                                 <input type="hidden" id="description" />
+                                <div id="validation-error-messages">
+                                </div>
                                 <br>
                                 <button id="form-checkout__submit" type="submit" class="btn btn-primary btn-block">Pay</button>
                                 <br>
