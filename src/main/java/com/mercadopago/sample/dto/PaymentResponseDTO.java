@@ -1,21 +1,21 @@
 package com.mercadopago.sample.dto;
 
 public class PaymentResponseDTO {
-    private String id;
+    private Long id;
     private String status;
     private String detail;
 
-    public PaymentResponseDTO(String id, String status, String detail) {
+    public PaymentResponseDTO(Long id, String status, String detail) {
         this.id = id;
         this.status = status;
         this.detail = detail;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

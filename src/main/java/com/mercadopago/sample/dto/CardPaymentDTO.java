@@ -2,6 +2,7 @@ package com.mercadopago.sample.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import javax.validation.constraints.NotNull;
 
 public class CardPaymentDTO {
@@ -14,7 +15,7 @@ public class CardPaymentDTO {
     private String paymentMethodId;
 
     @NotNull
-    private Float transactionAmount;
+    private BigDecimal transactionAmount;
 
     @NotNull
     private Integer installments;
@@ -53,11 +54,11 @@ public class CardPaymentDTO {
         this.paymentMethodId = paymentMethodId;
     }
 
-    public Float getTransactionAmount() {
+    public BigDecimal getTransactionAmount() {
         return transactionAmount;
     }
 
-    public void setTransactionAmount(Float transactionAmount) {
+    public void setTransactionAmount(BigDecimal transactionAmount) {
         this.transactionAmount = transactionAmount;
     }
 
