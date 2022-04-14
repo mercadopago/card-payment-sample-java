@@ -406,3 +406,11 @@ footer p a:hover {
 #fail-response, #success-response {
     display: none;
 }
+
+.validation-error {
+    border-color: red;
+}
+
+#validation-error-messages p {
+    color: red;
+}
